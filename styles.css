@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 :root {
     /* Color Scheme Variables - Harmonized palette */
     --primary-color: White;    
@@ -8,7 +7,6 @@
     --accent-color-1: #F26430;   
     --accent-color-2: #ff6d2e; 
     --background-color: rgb(255, 255, 255); /* Darker orange for hover */
-    
 }
 
 * {
@@ -23,23 +21,31 @@ body {
     color: var(--secondary-color);
 }
 
-/* Navigation Styles */
+
+/* Header & Navigation Styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-color);
-    padding: 1rem 4rem;
+    padding: 1rem clamp(1rem, 2vw,4rem) ;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
-.logo h1 {
+.logo h1 a{
     color: var(--accent-color-1);
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.logo h1 a:hover{
+    color: var(--accent-color-2);
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -49,7 +55,6 @@ header {
     justify-content: flex-end;
     align-items: center;
     gap: 2rem;
-    
 }
 
 .nav-links {
@@ -57,17 +62,22 @@ header {
     gap: 2rem;
     align-items: center;
 }
-main{
-    background: var(--background-color);
-}
-.nav-links a {
+
+.logo a{
     text-decoration: none;
+}
+header a{
+   text-decoration: none;
+}
+
+.nav-links a {
+    
     color: var(--secondary-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
     color: var(--accent-color-1);
 }
 
@@ -83,7 +93,7 @@ ul li {
 }
 
 .login-btn {
-    text-decoration: none;
+   
     color: var(--secondary-color);
     font-weight: 600;
     padding: 0.5rem 1.5rem;
@@ -95,36 +105,24 @@ ul li {
 }
 
 .login-btn:hover {
-    color: var(--primary-color);
-    background: var(--accent-color-2);
-    transform: translateY(-2px);
+    color: var(--accent-color-2);
+    border: 2px solid var(--accent-color-2);
+    
 }
 
-/* Remove the old hover style since we've redefined it */
-.nav-links a:hover {
-    color: var(--accent-color-1);
+
+main {
+    background: var(--background-color);
+    margin-top: 2rem; 
+   
 }
 
-/* Update mobile styles for login button */
-@media (max-width: 768px) {
-    .login-btn {
-        background: var(--accent-color-1);
-        color: var(--primary-color);
-        text-align: center;
-        width: 100%;
-    }
+/*Hero Section*/
 
-    .login-btn:hover {
-        background: var(--accent-color-2);
-        border-color: var(--accent-color-2);
-    }
-}
-
-/* Adjust hero section to account for fixed header */
 .hero {
-    padding-top: 5rem;
     display: flex;
-    min-height: 100vh;
+   
+   height: 100vh;
     align-items: center;
     justify-content: space-between;
     padding: 0;
@@ -135,14 +133,37 @@ ul li {
 }
 
 .hero-content {
-    flex: 1;
+    flex-shrink: 0;
+    /* white-space: nowrap; */
+    /* flex: 2; */
     text-align: left;
-    max-width: 800px;
-    padding: clamp(2rem, 5vw, 4rem);
+    max-width: 65%;
+    padding: clamp(1rem, 2vw, 6rem) clamp(2rem, 2vw, 4rem);
+    
 }
 
-.hero-image {
-    flex: 1;
+.hero-title {
+    /* fluid typography: min: 32px, preferred: 5vw, max: 64px */
+    font-size: clamp(1rem, 3.5vw + 1rem, 4rem);
+    font-weight: 800;
+    margin-bottom: clamp(2rem, 2vw, 4rem);
+    color: var(--secondary-color);
+    line-height: clamp(3.4rem, 5.5vw, 5rem);
+}
+
+.hero-description {
+    /* fluid typography: min: 16px, preferred: 2.5vw, max: 20px */
+    font-size: clamp(1rem, 2.5vw + 0.5rem, 1.25rem);
+    margin-bottom: clamp(1rem, 0.5vw, 3rem);
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    /* max-width: 60ch; optimal line length for readability */
+    line-height: 1.5;
+}
+
+.hero-image-container { 
+    /* flex: 0.4; */
+    max-width: 35%;  /* Control maximum width */
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -154,45 +175,22 @@ ul li {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transform: translateY(2rem);
     display: block;
-}
-
-.hero-title {
-    /* fluid typography: min: 32px, preferred: 5vw, max: 64px */
-    font-size: clamp(2rem, 5vw + 1rem, 4rem);
-    font-weight: 800;
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
-    color: var(--text-primary);
-    /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
-    
-    line-height: 1.2;
-}
-
-.hero-description {
-    /* fluid typography: min: 16px, preferred: 2.5vw, max: 20px */
-    font-size: clamp(1rem, 2.5vw + 0.5rem, 1.25rem);
-    margin-bottom: clamp(1.5rem, 3vw, 2rem);
-    color: var(--text-primary);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    max-width: 60ch; /* optimal line length for readability */
-    line-height: 1.5;
-
+    transform: translateY(2rem);
 }
 
 .hero-cta {
     margin-top: clamp(1.5rem, 3vw, 2.5rem);
-    
 }
 
 .cta-button {
+    text-decoration: none;
     display: inline-block;
     padding: 0.8rem 2rem;
     color: var(--primary-color);
-    text-decoration: none;
     border-radius: 0.5rem;
     font-weight: 600;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-size: clamp(0.875rem, 1.5vw + 1rem, 1.2rem);
     transition: all 0.3s ease;
     z-index: 3;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -204,25 +202,6 @@ ul li {
 .cta-button:hover {
     transform: translateY(-2px);
     background: linear-gradient(45deg, var(--accent-color-2), var(--accent-color-1));
-    box-shadow: 0 4px 8px rgba(242, 100, 48, 0.3);
-
-}
-
-.join-as-tutor-btn {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 600;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-    background: var(--accent-color-1);
-    box-shadow: 0 2px 4px rgba(242, 100, 48, 0.2);
-    overflow: hidden;
-}
-
-.join-as-tutor-btn:hover {
-    background: var(--accent-color-2);
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(242, 100, 48, 0.3);
 }
 
@@ -244,45 +223,31 @@ ul li {
 
 .cta-button:hover::before {
     left: 100%;
+}
+
+.join-as-tutor-btn {
     
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background: var(--accent-color-1);
+    box-shadow: 0 2px 4px rgba(242, 100, 48, 0.2);
+    overflow: hidden;
 }
 
-/* Update mobile styles */
-@media (max-width: 768px) {
-    .join-as-tutor-btn {
-        width: 100%;
-        text-align: center;
-        background: var(--accent-color-1);
-    }
-
-    .join-as-tutor-btn:hover {
-        background: var(--accent-color-2);
-    }
-
-    .cta-button {
-        width: fit-content;
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
-    }
+.join-as-tutor-btn:hover {
+    background: var(--accent-color-2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(242, 100, 48, 0.3);
 }
 
-/* Additional mobile adjustments for very small screens */
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 1.5rem;
-    }
 
-    .hero-title {
-        font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem);
-        max-width: 12ch;
-    }
 
-    .hero-description {
-        font-size: 1rem;
-        max-width: 35ch;
-    }
-}
 
+
+/* How it works --Section */
 .how-it-works {
     padding: 5rem 2rem;
     text-align: center;
@@ -313,11 +278,12 @@ ul li {
 }
 
 .step-item {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    position: relative; /* Added to position the connecting lines */
 }
 
 .step-icon {
@@ -362,22 +328,56 @@ ul li {
     background: #e0e0e0;
 }
 
-/* Mobile responsiveness */
+
+
+/*Responsive Design*/
+
+/* Update mobile styles */
 @media (max-width: 768px) {
-    .steps-container {
-        flex-direction: column;
-        gap: 3rem;
+
+    .login-btn {
+        
+        color: var(--primary-color);
+        color: aqua;
+        text-align: center;
+        width: 100%;
     }
 
-    .step-item:not(:last-child)::after {
-        display: none;
+    .join-as-tutor-btn {
+        width: 100%;
+        text-align: center;
+        background: var(--accent-color-1);
     }
 
-    .step-item {
-        padding: 0 1rem;
+    .join-as-tutor-btn:hover {
+        background: var(--accent-color-2);
     }
 
-    .how-it-works-title {
-        font-size: 2rem;
+    .cta-button {
+        width: fit-content;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+
+    .hero-image-container {
+        max-width: 100%;  /* Full width on mobile */
+        height: 50vh;     /* Shorter height on mobile */
+    }
+}
+
+/* Additional mobile adjustments for very small screens */
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem);
+        max-width: 12ch;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        max-width: 35ch;
     }
 }
