@@ -18,7 +18,8 @@ git pull origin main
 
 # Create and switch to new branch
 git checkout -b feature/your-feature-name
-```
+# or
+git switch -c feature/your-feature-name
 
 2. **Make your changes**
 ```bash
