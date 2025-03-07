@@ -1,46 +1,5 @@
 # LingoMate
 
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Git installed on your machine
-- A modern web browser
-- A text editor (VS Code recommended)
-
-### Local Development Setup
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/mohBgz/LingoMate.git
-cd LingoMate
-```
-
-2. **View the website locally**
-- Option 1: Using VS Code Live Server
-  - Install "Live Server" extension in VS Code
-  - Right-click on `index.html`
-  - Select "Open with Live Server"
-
-- Option 2: Using Python's built-in server
-```bash
-# Python 3
-python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-```
-Then open `http://localhost:8000` in your browser
-
-- Option 3: Using Node.js http-server
-```bash
-# Install http-server globally
-npm install -g http-server
-
-# Run server
-http-server
-```
-
 ## 👥 Team Collaboration Guide
 
 ### First Time Setup
