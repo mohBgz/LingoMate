@@ -1,110 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LingoMate - Find Language Partners</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>
-                <a href="#">LingoMate</a>
-            </h1>
-        </div>
-        
-        <div class="nav-container">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LingoMate - Find Language Partners</title>
+        <link rel="stylesheet" href="output.css">
+    </head>
+    <body >
+        <header class="flex z-10 absolute top-0 right-0 left-0 shadow-md justify-between items-center bg-[var(--primary-color)] p-4 md:p-[clamp(1rem, 2vw, 4rem)]">
+            <div class="logo">
+                <h1><a href="#">LingoMate</a></h1>
+            </div>
+            <nav class="flex justify-between items-center gap-[4vw] relative min-w-[100%] bg-black ">
+                <svg class="sm:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" class="cursor-pointer">
+                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <ul class="hidden sm:flex gap-[2rem] items-center ">
+                    <li><a href="#" class="text-[1.3rem] hover:text-[var(--accent-color-1)] transition-colors font-semibold">Home</a></li>
+                    <li><a href="#" class="text-[1.3rem] hover:text-[var(--accent-color-1)] transition-colors font-semibold">Services</a></li>
+                    <li><a href="#" class="text-[1.3rem] hover:text-[var(--accent-color-1)] transition-colors font-semibold">About</a></li>
+                </ul>
+                <ul class="flex items-center">
+                    <li><a href="#login" class="text-[1.2rem] bg-[linear-gradient(45deg,var(--accent-color-1),var(--accent-color-2))] text-white px-4 py-2 rounded-full hover:opacity-85 transition-opacity duration-600 ease-in-out">Login</a></li>
                 </ul>
             </nav>
-    
-            <!-- Authentication -->
-            <div class="auth-buttons">
-                <a href="#login" class="login-btn">Login</a>
-                <a href="#signup" class="join-as-tutor-btn">Join as a Tutor</a>
-            </div>
-        </div>
-        
-    </header>
-
-   
-    <main>
-         <!-- Hero Section -->
-        <section class="hero">
-            
-            <!-- Hero Content -->
-            <div class="hero-content">
-                <h1 class="hero-title">Find Local Language Helpers Anywhere</h1>
-                <p class="hero-description">Connect with verified native speakers who can help you navigate language barriers</p>
-                <div class="hero-cta">
-                    <a href="#signup" class="cta-button">Get Started</a>
-                </div>
-            </div>
-
-            <!-- Hero Image -->
-            <div class="hero-image-container">
-                <img 
-                    src="/img/hero-page.jpg" 
-                    alt="People collaborating on language learning"
-                    loading="eager"
-                >
-            </div>
-        </section>
-
-        <!-- How it works Section -->
-        <section class="how-it-works">
-            <h2 class="how-it-works-title">How LingoMate Works</h2>
-            <p class="how-it-works-subtitle">
-                Connect with expert language tutors in just a few simple steps to start your learning journey.
-            </p>
-
-            <div class="steps-container">
-                <div class="step-item">
-                    <div class="step-icon">
-                        <img src="/icons/profile.svg" alt="Create Profile Icon">
+        </header>
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <h1 class="hero-title">Find Local Language Helpers Anywhere</h1>
+                    <p class="hero-description">Connect with verified native speakers who can help you navigate language barriers</p>
+                    <div class="hero-cta">
+                        <a href="#signup" class="cta-button">Get Started</a>
                     </div>
-                    <h3 class="step-title">Create Profile</h3>
-                    <p class="step-description">
-                        Set up your profile with your language goals and preferences.
-                    </p>
                 </div>
-
-                <div class="step-item">
-                    <div class="step-icon">
-                        <img src="/icons/search.svg" alt="Find Tutors Icon">
+                <!-- Hero Image -->
+                <div class="hero-image-container">
+                    <img 
+                        src="/img/hero-page.jpg" 
+                        alt="People collaborating on language learning"
+                        loading="eager"
+                    >
+                </div>
+            </section>
+            <!-- How it works Section -->
+            <section class="how-it-works">
+                <h2 class="how-it-works-title">How LingoMate Works</h2>
+                <p class="how-it-works-subtitle">
+                    Connect with expert language tutors in just a few simple steps to start your learning journey.
+                </p>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <img src="/icons/profile.svg" alt="Create Profile Icon">
+                        </div>
+                        <h3 class="step-title">Create Profile</h3>
+                        <p class="step-description">
+                            Set up your profile with your language goals and preferences.
+                        </p>
                     </div>
-                    <h3 class="step-title">Find Tutors</h3>
-                    <p class="step-description">
-                        Browse through verified language tutors sorted by ratings and expertise.
-                    </p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-icon">
-                        <img src="/icons/chat.svg" alt="Connect Icon">
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <img src="/icons/search.svg" alt="Find Tutors Icon">
+                        </div>
+                        <h3 class="step-title">Find Tutors</h3>
+                        <p class="step-description">
+                            Browse through verified language tutors sorted by ratings and expertise.
+                        </p>
                     </div>
-                    <h3 class="step-title">Connect Instantly</h3>
-                    <p class="step-description">
-                        Schedule sessions and connect with your chosen tutor through our platform.
-                    </p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-icon">
-                        <img src="/icons/learn.svg" alt="Start Learning Icon">
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <img src="/icons/chat.svg" alt="Connect Icon">
+                        </div>
+                        <h3 class="step-title">Connect Instantly</h3>
+                        <p class="step-description">
+                            Schedule sessions and connect with your chosen tutor through our platform.
+                        </p>
                     </div>
-                    <h3 class="step-title">Start Learning</h3>
-                    <p class="step-description">
-                        Begin your personalized language learning journey with expert guidance.
-                    </p>
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <img src="/icons/learn.svg" alt="Start Learning Icon">
+                        </div>
+                        <h3 class="step-title">Start Learning</h3>
+                        <p class="step-description">
+                            Begin your personalized language learning journey with expert guidance.
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html> 
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

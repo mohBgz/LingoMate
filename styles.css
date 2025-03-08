@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 :root {
     /* Color Scheme Variables - Harmonized palette */
     --primary-color: White;    
@@ -15,28 +20,27 @@
     box-sizing: border-box;
 }
 
+/* Reset height for all elements */
+html {
+    height: 100%;
+}
+
 body {
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     line-height: 2;
     color: var(--secondary-color);
+    position: relative;
+    margin: 0;
 }
 
+ul li {
+    list-style: none;
+}
 
 /* Header & Navigation Styles */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-    padding: 1rem clamp(1rem, 2vw,4rem) ;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-}
+
+
 
 .logo h1 a{
     color: var(--accent-color-1);
@@ -50,18 +54,9 @@ header {
     font-weight: 700;
 }
 
-.nav-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 2rem;
-}
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
+
+
 
 .logo a{
     text-decoration: none;
@@ -70,27 +65,9 @@ header a{
    text-decoration: none;
 }
 
-.nav-links a {
-    
-    color: var(--secondary-color);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
 
-.nav-links a:hover {
-    color: var(--accent-color-1);
-}
-
-ul li {
-    list-style: none;
-}
 
 /* Auth Buttons */
-.auth-buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
 
 .login-btn {
    
@@ -113,22 +90,20 @@ ul li {
 
 main {
     background: var(--background-color);
-    margin-top: 2rem; 
-   
+    min-height: 100vh;
+    margin-top: 20px;
 }
 
 /*Hero Section*/
 
 .hero {
+    min-height: 100vh;
     display: flex;
-   
-   height: 100vh;
     align-items: center;
     justify-content: space-between;
     padding: 0;
     position: relative;
     overflow: hidden;
-    gap: 0;
     background: var(--background-color);
 }
 
@@ -162,9 +137,8 @@ main {
 }
 
 .hero-image-container { 
-    /* flex: 0.4; */
-    max-width: 35%;  /* Control maximum width */
-    height: 100vh;
+    max-width: 35%;
+    height: 100%;  /* Full height of hero */
     position: relative;
     overflow: hidden;
     margin: 0;
@@ -193,15 +167,15 @@ main {
     font-size: clamp(0.875rem, 1.5vw + 1rem, 1.2rem);
     transition: all 0.3s ease;
     z-index: 3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+    box-shadow: 0 2px 4px rgb(255, 106, 0);
+    background: var(--accent-color-2);
     position: relative;
     overflow: hidden;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    background: linear-gradient(45deg, var(--accent-color-2), var(--accent-color-1));
+    background: var(--accent-color-2);
     box-shadow: 0 4px 8px rgba(242, 100, 48, 0.3);
 }
 
@@ -326,58 +300,4 @@ main {
     width: 100px;
     height: 2px;
     background: #e0e0e0;
-}
-
-
-
-/*Responsive Design*/
-
-/* Update mobile styles */
-@media (max-width: 768px) {
-
-    .login-btn {
-        
-        color: var(--primary-color);
-        color: aqua;
-        text-align: center;
-        width: 100%;
-    }
-
-    .join-as-tutor-btn {
-        width: 100%;
-        text-align: center;
-        background: var(--accent-color-1);
-    }
-
-    .join-as-tutor-btn:hover {
-        background: var(--accent-color-2);
-    }
-
-    .cta-button {
-        width: fit-content;
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
-    }
-
-    .hero-image-container {
-        max-width: 100%;  /* Full width on mobile */
-        height: 50vh;     /* Shorter height on mobile */
-    }
-}
-
-/* Additional mobile adjustments for very small screens */
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 1.5rem;
-    }
-
-    .hero-title {
-        font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem);
-        max-width: 12ch;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-        max-width: 35ch;
-    }
 }
