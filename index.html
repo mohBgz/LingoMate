@@ -7,27 +7,64 @@
         <link rel="stylesheet" href="output.css">
     </head>
     <body >
-        <header class="flex z-10 absolute top-0 right-0 left-0 shadow-md justify-between items-center bg-[var(--primary-color)] p-4 md:p-[clamp(1rem, 2vw, 4rem)]">
+        <header class="bg-white flex  z-[100] absolute top-0 right-0 left-0 shadow-md justify-between items-center p-4 md:p-[clamp(1rem, 2vw, 4rem)]">
+            
+            <!-- Brand Logo -->
             <div class="logo">
                 <h1><a href="#">LingoMate</a></h1>
             </div>
-            <nav class="flex justify-between items-center gap-[4vw] relative min-w-[100%] bg-black ">
-                <svg class="sm:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" class="cursor-pointer">
-                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <ul class="hidden sm:flex gap-[2rem] items-center ">
-                    <li><a href="#" class="text-[1.3rem] hover:text-[var(--accent-color-1)] transition-colors font-semibold">Home</a></li>
-                    <li><a href="#" class="text-[1.3rem] hover:text-[var(--accent-color-1)] transition-colors font-semibold">Services</a></li>
-                    <li><a href="#" class="text-[1.3rem] hover:text-[var(--accent-color-1)] transition-colors font-semibold">About</a></li>
+
+            <ul class="hamburger-menu transition-all duration-300 ease-in-out bg-white py-4 top-[-50vh] right-0 left-0 shadow-md absolute flex flex-col border gap-0 items-center justify-center">
+                <li class="w-full  py-2  px-0  text-center ">
+                    <a href="#" class="text-lg text-gray-600  hover:text-[var(--accent-color-1)] transition-colors font-medium ">
+                        Home
+                    </a>
+                </li>
+                <li class="w-full  py-2 px-0  text-center ">
+                    <a href="#" class="text-lg text-gray-600  hover:text-[var(--accent-color-1)] transition-colors font-medium ">
+                        Services
+                    </a>
+                </li>
+                <li class="w-full  py-2 px-0  text-center">
+                    <a href="#" class="text-lg text-gray-600  hover:text-[var(--accent-color-1)] transition-colors font-medium ">
+                        About</a>
+                    </li>
+                <li class="w-full py-2 px-0  text-center ">
+                    <a href="#login" class="text-lg text-gray-800  hover:text-[var(--accent-color-1)] transition-colors font-medium ">
+                        Login
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Nav link -->
+            <nav class="flex justify-between items-center relative gap-[2vw] p-2 max-w-[60%]">
+        
+                <!-- Hamburger Icon -->
+                <div class="hamburger-icon sm:hidden  hover:cursor-pointer">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <!-- Home Services About ... -->
+                <ul class="nav__links hidden sm:flex gap-[1.8vw] items-center ">
+                    <li><a href="#" class="nav__link text-gray-500 text-[1.2rem] hover:text-[var(--accent-color-1)] transition-colors font-medium">Home</a></li>
+                    <li><a href="#" class="nav__link text-gray-500 text-[1.2rem] hover:text-[var(--accent-color-1)] transition-colors font-medium">Services</a></li>
+                    <li><a href="#" class="nav__link text-gray-500 text-[1.2rem] hover:text-[var(--accent-color-1)] transition-colors font-medium">About</a></li>
                 </ul>
-                <ul class="flex items-center">
-                    <li><a href="#login" class="text-[1.2rem] bg-[linear-gradient(45deg,var(--accent-color-1),var(--accent-color-2))] text-white px-4 py-2 rounded-full hover:opacity-85 transition-opacity duration-600 ease-in-out">Login</a></li>
-                </ul>
+                <div class="hidden sm:flex items-center justify-between px-[20px] py-[4px] bg-[var(--accent-color-1)] rounded-full hover:bg-[var(--accent-color-2)] hover:shadow-md hover:cursor-pointer transition-all duration-600 ease-in-out">
+                    <a href="#login" class=" text-[1.1rem] text-white">Login</a>
+                </div>
             </nav>
+
+             <!-- hamburger content -->
+              
+             
+        
         </header>
         <main>
             <!-- Hero Section -->
-            <section class="hero">
+            <section class="hero ">
                 <!-- Hero Content -->
                 <div class="hero-content">
                     <h1 class="hero-title">Find Local Language Helpers Anywhere</h1>
@@ -46,7 +83,7 @@
                 </div>
             </section>
             <!-- How it works Section -->
-            <section class="how-it-works">
+            <section class="how-it-works gradient-background">
                 <h2 class="how-it-works-title">How LingoMate Works</h2>
                 <p class="how-it-works-subtitle">
                     Connect with expert language tutors in just a few simple steps to start your learning journey.
