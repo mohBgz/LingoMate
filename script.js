@@ -26,6 +26,8 @@ document.addEventListener("click", (event) => {
     if(!hamburger_icon.contains(event.target) && !document.querySelector(".hamburger-menu").contains(event.target)) {
         
         document.querySelector(".hamburger-menu").classList.remove("active");
+        document.querySelector(".hamburger-icon").classList.remove("active");
+
 
     }
 
