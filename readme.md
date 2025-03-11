@@ -3,11 +3,18 @@
 ## 👥 Team Collaboration Guide
 
 ### First-Time Setup
-1. Accept the collaboration invite from the repository owner.  
-2. Clone the repository:  
+1. **Accept the collaboration invite from the repository owner**  
+    Check your email or GitHub notifications for the invite and accept it.
+
+2. **Create a folder for the project**  
+    Choose a location on your computer and create a new folder for the project.
+
+3. **Open a terminal**  
+    You can use Command Prompt, PowerShell, or the terminal in Visual Studio Code.
+4. **Clone the repository**  
+    Open the terminal and type the following command:
 ```bash
 git clone https://github.com/mohBgz/LingoMate.git
-cd LingoMate
 ```
 
 ### Making Changes
