@@ -28,7 +28,6 @@ document.addEventListener("click", (event) => {
         document.querySelector(".hamburger-menu").classList.remove("active");
         document.querySelector(".hamburger-icon").classList.remove("active");
 
-
     }
 
 
